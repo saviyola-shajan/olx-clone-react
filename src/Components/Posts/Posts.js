@@ -20,7 +20,7 @@ useEffect(()=>{
     })
     setProducts(allPost)
   })
-},[])
+},[firebase])
 return (
   <div className="postParentDiv">
       <div className="moreView">
@@ -33,7 +33,7 @@ return (
             return <div onClick={()=>{
               setPostDeatils(product)
               navigate('/view')
-            }} className="card">
+            }} className="card" key={product.id}>
             <div className="favorite">
               <Heart></Heart>
             </div>

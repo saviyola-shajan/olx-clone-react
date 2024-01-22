@@ -161,6 +161,7 @@
     border: none;
     font-weight: 600;
     font-size:medium;
+    background-color: white;
   }
   
   @media only screen and (max-width: 700px) {

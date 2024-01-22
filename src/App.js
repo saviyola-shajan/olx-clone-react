@@ -1,14 +1,15 @@
-import React,{useEffect,useContext} from 'react'
+import React,{useEffect,useContext,lazy,Suspense} from 'react'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
-import './App.css';
-import './Pages/Signup.css'
-import Post from './Store/PostContext';
-import ViewPost from'./Pages/ViewPost'
-import Create from './Pages/Create'
-import Signup from './Pages/Signup'
-import Login from './Pages/Login'
-import Home from './Pages/Home'
 import { AuthContext, FirebaseContext } from './Store/Context';
+import './App.css';
+import Loading from './Components/Loading/Loading';
+import './Pages/Signup.css'
+const Post=lazy(()=>import('./Store/PostContext'))
+const ViewPost=lazy(()=>import('./Pages/ViewPost'))
+const Create=lazy(()=>import('./Pages/Create'))
+const Signup=lazy(()=>import('./Pages/Signup'))
+const Login =lazy(()=>import('./Pages/Login'))
+const Home=lazy(()=> import ('./Pages/Home')) 
 
 function App() {
   const {setUser} =useContext(AuthContext)
@@ -22,6 +23,7 @@ function App() {
     <div>
       <Post>
       <Router>
+        <Suspense fallback={<Loading/>}>
         <Routes>
         <Route exact path='/' element={<Home/>}/>
         <Route path='/signup' element={<Signup/>}/>
@@ -29,6 +31,7 @@ function App() {
         <Route path='/create' element={<Create/>}/>
         <Route path='/view' element={<ViewPost/>}/>
         </Routes>
+        </Suspense>
       </Router>
       </Post>
     </div>
