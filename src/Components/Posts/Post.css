@@ -40,6 +40,10 @@
     display: inline-block;
     cursor: pointer;
   }
+  .card:hover{
+    border: 1px solid black;
+    border-radius: 5px;
+  }
   
   .card .favorite {
     display: flex;

@@ -96,6 +96,7 @@
   }
   
   .language svg {
+    cursor: pointer;
   }
   
   .span {
@@ -113,14 +114,19 @@
     height: 2px;
   }
   
-  .loginPage a{
+  .loginPage {
+    cursor: pointer;
     text-decoration: none;
+  }
+  .logout{
+    cursor: pointer;
   }
   
   .sellMenu {
     position: relative;
     cursor: pointer;
     padding-right: 50px;
+    cursor: pointer;
   }
   
   .sellMenu .all {
@@ -162,6 +168,7 @@
     font-weight: 600;
     font-size:medium;
     background-color: white;
+    cursor: pointer;
   }
   
   @media only screen and (max-width: 700px) {
